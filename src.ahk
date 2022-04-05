@@ -1,17 +1,15 @@
-﻿req := ComObjCreate("Msxml2.XMLHTTP")
+req := ComObjCreate("Msxml2.XMLHTTP")
 global players
 servers := {"SG": "https://www.gametracker.com/server_info/mg.steam-gamers.net:27015/", "EGO": "https://www.gametracker.com/server_info/mg.csgo.edgegamers.cc:27015/"}
 
 for key, value in servers {
+
     req.open("GET", value, true)
     req.onreadystatechange := Func("Ready")
     req.send()
 
     while req.readyState != 4
     sleep 100
-
-    if (key = "SG")
-        players -= 1
 
     out .= key . ": " . players . "`n"
 }
