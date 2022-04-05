@@ -17,11 +17,6 @@ MsgBox, , , %out%, 2
 ExitApp
 
 
-
-
-
-
-
 #Persistent
 Ready() {
     global req
@@ -32,4 +27,3 @@ Ready() {
     else
         players := "err"
 }
-
