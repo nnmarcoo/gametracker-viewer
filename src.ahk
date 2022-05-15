@@ -26,7 +26,7 @@ Ready() {
 }
 
 loop:
-process, exist, csgo.exe
+process, exist, csgo.exe ; if csgo is open, don't check. (you can remove this)
 if (!errorlevel) {
     for key, value in servers {
         req.open("GET", value, true)
